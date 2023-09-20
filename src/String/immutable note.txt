@@ -51,3 +51,36 @@ public String getField2(){
 
 8. Make the Class Serializable (Optional): If your immutable class needs to be
 serialized, implement the Serializable interface.
+
+importance of immutable class
+1. Thread Safety: Immutable objects are inherently thread-safe because their state cannot change after creation.
+This means that multiple threads can access and use immutable objects concurrently without the need for locks or
+synchronization. This simplifies multi-threaded programming and helps prevent common concurrency bugs like race conditions.
+
+2. Predictable and Reliable: Since immutable objects cannot be modified, their behavior is predictable and reliable.
+Once you create an immutable object, you can be sure that its state will not change unexpectedly, which makes debugging
+and maintaining code easier.
+
+3. Caching: Immutable objects can be cached and reused because you know they won't change. This can lead to significant
+performance improvements, especially in situations where object creation is expensive.
+
+4. Security: Immutable objects can be used in security-critical applications because their state cannot be tampered with
+once they are created. For example, using immutable objects to represent cryptographic keys or sensitive data can enhance
+security.
+
+5. Functional Programming: Immutable classes are a fundamental concept in functional programming. In functional programming
+languages like Haskell and Scala, data immutability is enforced, and it encourages the use of immutable data structures.
+Immutable objects support functional programming principles like immutability, referential transparency, and pure functions.
+
+6. Hashing and Equality: Immutable objects are typically used as keys in data structures like dictionaries (maps) and sets
+because their hash code remains constant. This ensures that objects remain retrievable and can be compared correctly.
+
+7. Simplified Testing: Testing becomes simpler with immutable objects. You can create instances of an immutable class,
+test them, and be confident that their behavior won't change during testing.
+
+8. Code Maintainability: Immutable objects encourage good coding practices by reducing the need for complex setter methods
+and validation checks. This results in cleaner, more maintainable code.
+
+Interoperability: Immutable objects can be safely passed between different parts of a program or between different threads without worrying about concurrent modifications.
+
+Performance Optimization: Immutable objects can be optimized by the compiler or runtime environment more easily because their state is constant. This can lead to improved performance in certain scenarios.
