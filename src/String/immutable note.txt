@@ -1,0 +1,53 @@
+Immutable class is a class whose instances cannot be modified after they are created.
+This means that the state of an immutable object cannot change once it's been initialized.
+
+Steps to create immutable class are:
+
+1. Make the class 'final':
+Mark class as 'final' to prevent it from being extended(subclassed).
+This ensure that no one can create a mutable subclass that could change the
+behavior of the class.
+
+public final class ImmutableClass {
+//
+}
+
+2. Declare Fields as private and final: Declare all fields of the class as private and final.
+This prevents direct access to the fields from outside the class and ensures that their values
+cannot be modified after object creation.
+
+public final class ImmutableClass {
+    private final int field1;
+    private final String field2;
+
+    public ImmutableClass(int field1, String field2) {
+        this.field1 = field1;
+        this.field2 = field2;
+    }
+    //
+}
+
+3. Provide a Constructor: Create a constructor that initializes all the fields.
+The constructor should set the values of the fields only once during object
+creation.
+
+4. Do not provide setter methods:  Omit setter methods or any methods that allow
+modifying the sate of the object.
+
+5. Return copies of mutable objects: if class contains references to multiple objects
+(eg collections), make sure to return copies of these objects or use immutable
+versions to ensure that external code cannot modify them.
+
+6. provide getter methods: provide getter methods to access the values of the fields without allowing modification.
+
+public int getField1(){
+    return field1;
+}
+public String getField2(){
+    return field2;
+}
+7. Override equals and hashCode Methods: If you want to compare instances of your
+ immutable class for equality, override the equals and hashCode methods.
+
+8. Make the Class Serializable (Optional): If your immutable class needs to be
+serialized, implement the Serializable interface.
